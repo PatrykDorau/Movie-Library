@@ -1,43 +1,42 @@
-import React, {useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
+import './MovieList.css';
 
-const MovieList = ({sendReq, setSendReq, Searchfield, setMoviesArray, MoviesArray}) =>{
+const MovieList = ({onAddToFavorites ,sendReq, setSendReq, Searchfield, setMoviesArray, MoviesArray}) =>{
+
 
     useEffect(()=> {
         if(sendReq){
-            fetch(`http://www.omdbapi.com/?s=${Searchfield}&apikey=aaa47894`)
-                .then(response => response.json())
-                .then(console.log)
-                // .then(response => response.blob())
-                // .then(function(myblob) {
-                //     setMoviesArray([myblob])
-                // })
-                // .then(movie => setMoviesArray([movie]))
-                .then((data)=>{
-                    setMoviesArray(data)
-                })
-                .then(console.log(MoviesArray))
+            async function fetchData() {
+                const response = await fetch(`http://www.omdbapi.com/?s=${Searchfield}&apikey=aaa47894`);
+                const json = await response.json();
+                console.log('json',json);
+                setMoviesArray(json.Search);
+                console.log('array',MoviesArray);
                 setSendReq(false);
+            }
+            fetchData();
         }
     },[sendReq]);
 
-
-    //wziac response i włozyc do MoviesArray
-    const Arr = () => {
-
-    }
-
-     /*const MovieComponent = MoviesArray.map((movie, i)=>{
-         return(
-             <div>
-                <img alt='' src={MoviesArray[i].Search.Poster}/>
-                <h1>{MoviesArray[i].Title}</h1>
+     const MovieComponent = MoviesArray.map((movie)=>{
+        return(
+             <div className = "div-MovieList">
+                <div className = "inner-div-MovieList">
+                    <img alt='' src={movie.Poster}/>
+                    <h1 className = "h1-MovieList">{movie.Title}</h1>
+                    <button onClick ={onAddToFavorites} >
+                        <i class="fas fa-plus"></i>
+                    </button>
+                </div>
              </div>
         )
-     });*/
+     });
 
     return(
-        // <MovieComponent/>
-        <h1>tutaj ma byc lista filmow</h1>
+        <div>
+             {MovieComponent}
+        </div>
     );
 }
-export default MovieList
+
+export default MovieList;

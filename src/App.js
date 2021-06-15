@@ -1,29 +1,31 @@
 import SearchBox from './components/SearchBox';
 import './App.css';
-import Scroll from './components/Scroll';
 import React, {useState} from 'react';
 import MovieList from './components/MovieList';
 
 
 function App() {
 
-  const [Searchfield,setSearchfield] = useState('');
+  const [Searchfield, setSearchfield] = useState('');
   const [MoviesArray, setMoviesArray] = useState([]);
+  const [Favorites, setFavorites] = useState([]);
   const [sendReq, setSendReq] = useState(false);
 
+  const onAddToFavorites = (film) =>{           // tutaj cos nie chodzi ta funkcja
+    console.log(film);
+    setFavorites([...Favorites, film])
+    console.log(Favorites);
+  }
 
   const onSearchChange = (e) =>{
-    console.log(e.target.value);
     setSearchfield(e.target.value)
   };
 
   return (
     <div className="App">
-      <h1>Movie  Wiki</h1>
+      <h1>Movie-Wiki</h1>
       <SearchBox  setSendReq ={ setSendReq } searchChange = {onSearchChange}/>
-      <Scroll>
-        <MovieList sendReq ={ sendReq} setSendReq ={ setSendReq } MoviesArray = {MoviesArray} setMoviesArray = {setMoviesArray} Searchfield={Searchfield}/>
-      </Scroll>
+      <MovieList onAddToFavorites={onAddToFavorites} sendReq ={ sendReq} setSendReq ={ setSendReq } Searchfield={Searchfield} MoviesArray = {MoviesArray} setMoviesArray = {setMoviesArray}/>
     </div>
   );
 }
