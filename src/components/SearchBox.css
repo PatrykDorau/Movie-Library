@@ -1,0 +1,17 @@
+.input-SearchBox{
+    height:40px;
+    width:15%;
+    border-radius:6px 0px 0 6px ; 
+    padding:10px;
+    border:none;
+}
+.button-SearchBox {
+    height:40px;
+    border-radius:0 6px 6px 0;
+    padding:10px;
+    cursor:pointer;
+    border:none;
+}
+.button-SearchBox:hover{
+    background-color:grey;
+}
