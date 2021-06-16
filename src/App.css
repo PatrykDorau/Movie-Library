@@ -4,9 +4,47 @@ h1 {
 	font-family: fantasy;
 	font-weight: 200;
   font-size:40px;
-	color: #0ccac4 ;
+	color: whitesmoke ;
 }
 
 .App {
   text-align: center;
+}
+
+.div-lib {
+	position:fixed;
+	right:5px;
+	top:10px;
+	font-size:20px;
+	text-decoration: none;
+	color:white;
+	padding: 5px;
+}
+
+
+.link-lib {
+	text-decoration: none;
+	color:whitesmoke;
+	padding-right:10px;
+}
+
+.fas {
+	padding-left: 5px;
+	
+}
+
+.link-search {
+	text-decoration: none;
+	color:whitesmoke;
+	padding-right:10px;
+}
+
+.div-main {
+	position:fixed;
+	right:5px;
+	top:10px;
+	font-size:20px;
+	text-decoration: none;
+	color:white;
+	padding: 5px;
 }

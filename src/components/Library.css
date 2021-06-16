@@ -1,0 +1,18 @@
+h1 {
+    text-align: center;
+    text-decoration: none;
+    font-size: 25px;
+}
+h2 {
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    color: whitesmoke;
+}
+
+.Lib-indiv {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
