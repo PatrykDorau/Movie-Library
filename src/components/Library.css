@@ -10,9 +10,73 @@ h2 {
     color: whitesmoke;
 }
 
+.Lib-indiv-inner {
+    position: relative;
+    padding: 3px;
+    margin: 10px;
+    width:300px;
+    height: 600px;
+}
+
 .Lib-indiv {
-    display:flex;
-    flex-direction: column;
+    display: inline-block;
+    padding: 3px;
+    margin: 10px;
+    border-radius: 6px;
+}
+
+.title{
+    font-size: 20px;
+}
+
+.h3-lib{
+    color: whitesmoke;
+    margin-left: 40%;
+}
+
+.fa-eye {
+    color: whitesmoke;
+    position: absolute;
+    font-size: 30px;
+    z-index: 2;
+    right:10px;
+    top:3px;
+}
+
+.fa-times {
+    color:red;
+    position:absolute;
+    font-size: 30px;
+    z-index: 2;
+    top:3px;
+    left: 10px;
+}
+
+.Lib-div-eye {
+    color:white;
+    opacity: 0.6;
+    font-size: 230px;
+    position:absolute;
+    margin-top: 120px;
+    z-index: 99;
+}
+
+.karta {
+    background-color: black;
+    position: absolute;
+    flex-flow: column;
+    width:300px;
+    height: 600px;
+    margin-right: 50px;
+    border-radius: 6px;
+}
+
+.img{
+    display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.fa-star{
+    color: gold;
 }

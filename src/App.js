@@ -35,7 +35,7 @@ function App() {
       <Switch>
         <Route exact path ="/" >
           <div className="App">
-            <h1>Movie-Wiki</h1>
+            <h1>Movie-Library</h1>
             <div className = "div-main">
                 <h3><Link className = "link-lib" to = "/library">Favourites<i className="fas fa-video"></i></Link></h3>
             </div>
