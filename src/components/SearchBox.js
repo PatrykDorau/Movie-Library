@@ -11,8 +11,8 @@ const SearchBox = ({ setSendReq ,searchChange }) => {
                 className = "input-SearchBox"
                 placeholder = "wyszukaj film"
                 type = "search"
-                onChange = {searchChange} />
-            <button className="button-SearchBox" onClick = { () => {setSendReq(true)}}>
+                onChange = {searchChange}/>
+            <button type = "submit" className="button-SearchBox" onClick = { () => {setSendReq(true)}}>
                 <i className="fas fa-search"></i>
             </button>
         </div>

@@ -9,6 +9,7 @@ import {
   Link
 } from "react-router-dom";
 import Library from './components/Library';
+import Scroll from './components/Scroll';
 
 
 
@@ -20,10 +21,18 @@ function App() {
   const [sendReq, setSendReq] = useState(false);
   const [toggle,setToggle] = useState(false);
 
-  const onAddToFavorites = (film) =>{           // tutaj cos nie chodzi ta funkcja
+
+
+  const onAddToFavorites = (film) =>{ 
     console.log(film);
-    setFavorites([...Favorites, film])
-    console.log(Favorites);
+    
+      if(Favorites.find((movie)=>{
+        return film.Title === movie.Title; 
+      })){
+        return
+      }
+      setFavorites([...Favorites, film]);
+      setToggle(true);
   }
 
   const onSearchChange = (e) =>{
@@ -40,7 +49,9 @@ function App() {
                 <h3><Link className = "link-lib" to = "/library">Favourites<i className="fas fa-video"></i></Link></h3>
             </div>
             <SearchBox  setSendReq ={ setSendReq } searchChange = {onSearchChange}/>
-            <MovieList setToggle = { setToggle} onAddToFavorites={onAddToFavorites} sendReq ={ sendReq} setSendReq ={ setSendReq } Searchfield={Searchfield} MoviesArray = {MoviesArray} setMoviesArray = {setMoviesArray}/>
+            <Scroll>
+              <MovieList setToggle = { setToggle} onAddToFavorites={onAddToFavorites} sendReq ={ sendReq} setSendReq ={ setSendReq } Searchfield={Searchfield} MoviesArray = {MoviesArray} setMoviesArray = {setMoviesArray}/>
+              </Scroll>
           </div>
         </Route>
         <Route path = "/library">

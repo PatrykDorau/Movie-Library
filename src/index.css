@@ -5,7 +5,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(90deg, rgba(23,22,22,1) 11%, rgba(27,25,26,1) 28%, rgba(38,38,42,1) 61%, rgba(40,40,36,1) 87%);
+  background: url("ticket.jpg");
+  background-size:100%;
+  background-repeat: no-repeat;
   
 }
 

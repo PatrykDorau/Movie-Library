@@ -20,13 +20,14 @@ const MovieList = ({onAddToFavorites ,sendReq, setSendReq, Searchfield, setMovie
         }
     },[sendReq]);
 
-     const MovieComponent = MoviesArray.map((movie)=>{
+     const MovieComponent = MoviesArray?.map((movie)=>{
         return(
              <div className = "div-MovieList">
                 <div className = "inner-div-MovieList">
-                    <img alt='' src={ movie.Poster }/>
+                    <img className = "img" alt='' src={ movie.Poster }/>
                     <h1 className = "h1-MovieList">{ movie.Title }</h1>
-                    <button onClick={ () => {onAddToFavorites(movie); setToggle(true);} } >
+                    <h3 className = "h3">Add to Favorites:</h3>
+                    <button className= "btn" onClick={ () => {onAddToFavorites(movie)} } >
                         <i className="fas fa-plus"></i>
                     </button>
                 </div>

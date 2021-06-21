@@ -32,6 +32,8 @@ h2 {
 .h3-lib{
     color: whitesmoke;
     margin-left: 40%;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .fa-eye {
@@ -58,25 +60,49 @@ h2 {
     font-size: 230px;
     position:absolute;
     margin-top: 120px;
+    right: 38px;
     z-index: 99;
 }
 
 .karta {
-    background-color: black;
     position: absolute;
     flex-flow: column;
     width:300px;
-    height: 600px;
+    height: 580px;
     margin-right: 50px;
     border-radius: 6px;
 }
 
 .img{
     display: flex;
-    justify-content: center;
-    align-items: center;
+    margin: 5px;
+    border-radius: 6px;
+    position: relative;
+    height: 400px;
+    width: 290px;
 }
 
-.fa-star{
-    color: gold;
+
+.star-div{
+    height: 50px;
+}
+
+.w-6{
+    width: 1.5em;
+}
+
+.h-6 {
+    height: 1.5em;
+    color:white;
+}
+
+.star-box-out{
+    display:flex;
+    width:300px;
+}
+
+.star-box{
+    position: relative;
+    left:30px;
+    cursor:pointer;
 }
